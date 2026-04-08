@@ -148,6 +148,14 @@ app.param("userId", (req, res, next, userId) => {
   return next();
 });
 
+// TODO-5: Route params: /users/:userId route
+app.get("/users/:userId", (req, res) => {
+  return res.json({
+    ok: true,
+    userId: req.userIdNum,
+  });
+});
+
 // TODO-1: start server on port 3000
 app.listen(3000, () => console.log("API running at http://localhost:3000"));
 
