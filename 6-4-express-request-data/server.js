@@ -126,6 +126,16 @@ app.get("/echo", (req, res) => {
   });
 });
 
+// TODO-3: Route params: /profile/First/Last
+app.get("/profile/:first/:last", (req, res) => {
+  const { first, last } = req.params;
+
+  return res.json({
+    ok: true,
+    fullName: `${first} ${last}`,
+  });
+});
+
 // TODO-1: start server on port 3000
 app.listen(3000, () => console.log("API running at http://localhost:3000"));
 
